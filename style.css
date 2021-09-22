@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body { 
+    margin: 0;
+    padding: 20px;
+    background-color: #f1f2f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container  { 
+    width: 700px;
+    margin: 40px 0;
+}
+
+.accordion { 
+    width: 100%;
+    background-color: #2d2d2d;
+}
+
+.accordion-tab input { 
+    display: none;
+}
+
+.accordion-tab label { 
+    display: block;
+    color: #f1f2f6;
+    background-color: #38ada9;
+    font-size: 25px;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-weight: 500;
+    border-bottom: 2px solid #f1f2f6;
+    line-height: 25px;
+    padding: 15px 40px 15px 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.accordion-tab label::after { 
+    /* content: "\f055"; */
+    content: "+";
+    font-family: sans-serif;
+    font-size: 20px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.accordion-tab input:checked ~ label::after { 
+    /* content: '\f056'; */
+    content: '--';
+    transform: rotate(180deg);
+}
+
+.accordion-tab .accordion-content { 
+    max-height: 0;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.accordion-tab .accordion-content p { 
+    color: #f1f2f6;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 300;
+    line-height: 25px;
+    padding: 20px;
+}
+
+.accordion-tab input:checked ~ .accordion-content {
+    max-height: 100vh;
+}
